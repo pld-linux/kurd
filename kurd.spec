@@ -2,7 +2,7 @@ Summary:	KDE Universal Remote Desktop is remote desktop control client frontend
 Summary(pl):	KDE Universal Remote Desktop - nak³adka dla klientów zdalnych desktopów
 Name:		kurd
 Version:	0.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -13,8 +13,8 @@ URL:		http://kurd.sourceforge.net/
 BuildRequires:	kdelibs-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	rdesktop
-Requires:	kdebase >= 3.0
-Requires:	tightvnc
+Requires:	kdebase-core >= 3.0
+Requires:	vnc-client
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
