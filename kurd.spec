@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://kurd.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	rdesktop
@@ -33,6 +34,7 @@ klientów zdalnych desktopów.
 %patch1 -p1
 
 %build
+cp -f /usr/share/automake/config.sub admin/
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %configure
 %{__make}
