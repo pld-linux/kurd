@@ -11,6 +11,7 @@ Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://kurd.sourceforge.net/
 BuildRequires:	kdelibs-devel
+BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	rdesktop
 Requires:	kdebase >= 3.0
 Requires:	tightvnc
@@ -32,8 +33,7 @@ klientów zdalnych desktopów.
 %patch1 -p1
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %configure
 %{__make}
 
@@ -41,7 +41,8 @@ kde_icondir="%{_pixmapsdir}"; export kde_icondir
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name} --with-kde
 
@@ -53,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kurd.desktop
-%{_pixmapsdir}/locolor/*/apps/kurd.png
+%{_iconsdir}/locolor/*/apps/kurd.png
