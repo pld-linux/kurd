@@ -1,0 +1,13 @@
+--- kurd-0.1/kurd/kurd.desktop.fix	Thu Apr 24 13:26:51 2003
++++ kurd-0.1/kurd/kurd.desktop	Thu Apr 24 13:29:15 2003
+@@ -3,8 +3,9 @@
+ Encoding=UTF-8
+ Type=Application
+ Exec=kurd -caption "%c" %i %m  
+-Icon=$KDEDIR/share/icons/locolor/32x32/apps/kurd.png
++Icon=/usr/share/icons/locolor/32x32/apps/kurd.png
+ DocPath=kurd/index.html
++Categories=Application;Network;
+ Comment=
+ Comment[de]=
+ Terminal=0
