@@ -1,0 +1,15 @@
+--- kurd-0.1/kurd/Makefile.in.fix	Thu Apr 24 13:48:33 2003
++++ kurd-0.1/kurd/Makefile.in	Thu Apr 24 13:53:11 2003
+@@ -558,10 +558,10 @@
+ install-data-local:
+ #>- 	$(mkinstalldirs) $(kde_appsdir)/Applications/
+ #>+ 1
+-	$(mkinstalldirs) $(DESTDIR)$(kde_appsdir)/Applications/
++	$(mkinstalldirs) $(DESTDIR)/usr/share/applications/
+ #>- 	$(INSTALL_DATA) $(srcdir)/kurd.desktop $(kde_appsdir)/Internet/kurd.desktop
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/kurd.desktop $(DESTDIR)$(kde_appsdir)/Internet/kurd.desktop
++	$(INSTALL_DATA) $(srcdir)/kurd.desktop $(DESTDIR)/usr/share/applications/kurd.desktop
+ #>- 	$(mkinstalldirs) $(kde_icondir)/locolor/32x32/apps/
+ #>+ 1
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/locolor/32x32/apps/
