@@ -7,7 +7,7 @@
 -Icon=$KDEDIR/share/icons/locolor/32x32/apps/kurd.png
 +Icon=/usr/share/icons/locolor/32x32/apps/kurd.png
  DocPath=kurd/index.html
-+Categories=Application;Network;RemoteAccess;
++Categories=Network;RemoteAccess;
  Comment=
  Comment[de]=
  Terminal=0
