@@ -5,7 +5,7 @@ Version:	0.1
 Release:	3
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/kurd/%{name}-%{version}.tar.gz
 # Source0-md5:	726808fc5dcc9372fdb12c3b495839c4
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-desktop.patch
@@ -17,8 +17,6 @@ Requires:	rdesktop
 Requires:	kdebase-core >= 3.0
 Requires:	vnc-client
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 KDE Universal Remote Desktop has the goal of becoming an extendable
@@ -34,7 +32,7 @@ klientów zdalnych desktopów.
 %patch1 -p1
 
 %build
-cp -f /usr/share/automake/config.sub admin/
+cp -f /usr/share/automake/config.sub admin
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %configure
 %{__make}
@@ -46,6 +44,8 @@ install -d $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+mv -f $RPM_BUILD_ROOT%{_iconsdir}/{lo,hi}color
+
 %find_lang %{name} --with-kde
 
 %clean
@@ -56,4 +56,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kurd.desktop
-%{_iconsdir}/locolor/*/apps/kurd.png
+%{_iconsdir}/hicolor/*/apps/kurd.png
