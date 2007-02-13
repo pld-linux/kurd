@@ -1,5 +1,5 @@
 Summary:	KDE Universal Remote Desktop is remote desktop control client frontend
-Summary(pl.UTF-8):   KDE Universal Remote Desktop - nakładka dla klientów zdalnych desktopów
+Summary(pl.UTF-8):	KDE Universal Remote Desktop - nakładka dla klientów zdalnych desktopów
 Name:		kurd
 Version:	0.1
 Release:	4
